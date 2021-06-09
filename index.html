@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>David Roorbach</title>
+  </head>
+
+  <body>
+
+    <h1>Find Your Effective Hourly Rate</h1>
+
+    <form id="myForm">
+      <p>My Salary: $<input type="text" id="salary" value="" /></p>
+      <p>Hours Worked Per Week: <input type="text" id="hours" value="" /></p>
+    </form>
+
+    <script>
+      function myHourlyRate() {
+        let x = document.getElementById("myForm").elements[0].value;
+        let y = document.getElementById("myForm").elements[1].value;
+        let hourlyRate = Math.round(100*(x / (y * 50))) / 100;
+        let formattedRate = "$" + hourlyRate + "/per hour";
+        document.getElementById("demo").innerHTML = formattedRate;
+        // Rounding: Math.round(100*X)/100;
+      }
+    </script>
+
+    <button onclick="myHourlyRate()">Find My Hourly Rate</button>
+
+    <p id="demo"></p>
+
+  </body>
+</html>
